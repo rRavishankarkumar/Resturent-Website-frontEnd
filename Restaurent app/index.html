@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <!--......Side Navbar......-->
+    <div class="side-navber">
+      <i class="fa-solid fa-bars"></i>
+
+      <div class="design">
+        <a href="">meterial</a>
+        <a href="">design</a>
+        <a href="">process</a>
+      </div>
+    </div>
+
+    <!-- ..... top navber .....-->
+
+    <div class="top-navber">
+      <div class="top">
+        <a href="#">Shope</a>
+        <a href="#">Features</a>
+        <a href="#">Recipes</a>
+        <a href="#">Hotline</a>
+      </div>
+
+      <div class="icons">
+        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+        <img src="Logo.png" alt="logo not shown">
+        <div class="theme-switch">
+          <input type="checkbox" id="theme-switch" class="theme-switch-checkbox">
+          <label for="theme-switch" class="theme-switch-label">
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- .....................food.............................-->
+
+    <div class="food">
+      <div class="foodbar">
+        <span>foodbar</span>
+        <img src="img2.png" alt="foodbar-img">
+      </div>
+
+      <div class="order">
+        <h1>healthy salad</h1>
+        <p>salad is nutritionally complete food that contain all 27 essential vitamins
+          and minerals, protin, essential fatty acides, carbs, fibre and phytonutrients.</p>
+          <span class="anker">$28</span>
+          <span class="sp">Discount 50%</span>
+          <a href="" class="btn">Order now</a>
+      </div>
+    </div>
+
+    <!--.......... footer..........-->
+
+    <div class="footer">
+      <div class="images">
+        <img src="img2.png" alt="Asparagus wild salad" class="item-img">
+        <span>$23</span>
+        <p>Asparagus wild</p>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
+      </div>
+
+     <div class="images">
+      <img src="img1.png" alt="Lime Asparagus salad" class="item-img">
+      <span>$67</span>
+      <p>Lime Asparagus</p>
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+      <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
+     </div>
+
+     <div class="images">
+      <img src="img3.png" alt="Zucchini Salad" class="item-img">
+      <span>$56</span>
+      <p>Zucchini salad</p>
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+      <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
+     </div>
+
+     <div class="images">
+      <img src="img4.png" alt="Green Beans Salad" class="item-img">
+      <span>$53</span>
+      <p>Green Beans</p>
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+      <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
+     </div>
+    </div>
+
+    <!--..................... Socila media icons .....................-->
+    <div class="social">
+      <a href="https://www.instagram.com/r_s_gupta_2508/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://github.com/rRavishankarkumar"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.facebook.com/me/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/village-well-village-undefined-1a90a62b7/"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.google.com/"><i class="fa-brands fa-google"></i></a>
+      <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+
+      //...............add-items-in-cart..................//
+
+      //select all the "Add to cart" buttons
+      const addToCartButtons = document.querySelectorAll('.images a');
+      //select the cart icon in the top navigation bar
+      const cartIcon = document.querySelector('.top-navber .icons a i');
+      let cartCount = 0; // Initialize a variable tom keep track of the cart count
+
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          cartCount++; //Increment the ecart count
+          cartIcon.textContent = cartCount; //Update the cart icons text to the new count
+        });
+      });
+
+
+
+      //..............change item ...............//
+      const footerImages = document.querySelectorAll('.footer .images img');
+      //select the image in the foodbar
+      const foodbarImage = document.querySelector('.foodbar img');
+      //Add click event listener to each footer image
+      footerImages.forEach(image => {
+        image.addEventListener('click', () =>{
+        //Update the source of the foodbar image
+        foodbarImage.src = image.src;
+      });
+    });
+
+
+      //.....................remove-animation.................//
+      const itemImages = document.querySelectorAll('.item-img');
+      itemImages.forEach(img =>{
+        img.addEventListener('click', () =>{
+        //Remove the animation from all images
+        itemImages.forEach(img => img.classList.remove('animated'));
+        //Add the 'animated' class to the checked image
+        img.classList.add('animated');
+      });
+    });
+
+
+      //..........toggle-light-dark-mode..........//
+      const themeSwitch = document.getElementById('theme-switch');
+      const body = document.body;
+
+      themeSwitch.addEventListener('change', function(){
+        body.classList.toggle('dark-mode');
+      });
+    </script>
+
+
+  </header>
+  
+</body>
+</html>
